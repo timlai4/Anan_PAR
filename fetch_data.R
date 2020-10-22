@@ -2,7 +2,7 @@ library("ZentTools")
 
 samples <- data.frame(
   sample_name = c("Female", "Male"), 
-  file_1 = c("SRR7608135", "SRR7608134")
+  file_1 = c("SRR7608133", "SRR7608134")
   file_2 = rep(NA, 2)
 )
 zent <- zent_tools(
