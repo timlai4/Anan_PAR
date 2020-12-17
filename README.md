@@ -7,9 +7,11 @@
 *A. nancymaae* is a medically relevant primate, as it is infected by *Plasmodium falciparum*.
 
 Reference genome: **Anan_2.0**
+- total length: 2861.68 Mb
 - &#35; of scaffolds:  28,922
 - &#35; of contigs: 112,851
 - N50: 126,456
+- L50: 5,745
 
 
 ## Data Retrieval
@@ -25,3 +27,12 @@ singularity exec -eCB `pwd` -H `pwd` zent_tools_software_v0.4.sif Rscript fetch_
 ```
 The alignment is performed with [bwa-mem2](https://github.com/bwa-mem2/bwa-mem2). 
 We can run this in our do_align.sh script. 
+
+## BLASTing against human X
+
+To run BLAST against the human X chromosome, we used the following command:
+```{bash}
+makeblastdb -in NC_000023.11.fasta -dbtype nucl -parse_seqids -out blastdb/human_x 
+
+blastn -db blastdb/human_x -query GCF_000952055.2_Anan_2.0_genomic.fna -out blast.out -evalue 1e-5 -num_threads 12
+```
