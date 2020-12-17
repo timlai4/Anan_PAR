@@ -36,3 +36,9 @@ makeblastdb -in NC_000023.11.fasta -dbtype nucl -parse_seqids -out blastdb/human
 
 blastn -db blastdb/human_x -query GCF_000952055.2_Anan_2.0_genomic.fna -out blast.out -evalue 1e-5 -num_threads 12
 ```
+
+With the BLAST, we consistently exceeded requested walltime and vmem. We tried to parse the reference .fasta file to remove sequences < 10 Mb.
+
+```{bash}
+awk -v n=10000 '/^>/{ if(l>n) print b;b=$0;l=0;next } {l+=length;b=b ORS $0}END{if(l>n) print b }' GCF_000952055.2_Anan_2.0_genomic.fna > GCF_000952055.2_Anan_2.0_genomic.parsed10K.fna
+```
