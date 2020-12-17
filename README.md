@@ -1,5 +1,17 @@
 # Anan_PAR
 
+## Owl Monkey (*Aotus nancymaae*) Overview
+
+<img src="img/owlmonkey.jpg" alt="owl monkey" width="400"/>
+
+*A. nancymaae* is a medically relevant primate, as it is infected by *Plasmodium falciparum*.
+
+Reference genome: **Anan_2.0**
+- &#35; of scaffolds:  28,922
+- &#35; of contigs: 112,851
+- N50: 126,456
+
+
 ## Data Retrieval
 The reference genome annotation and assembly were downloaded from Ensembl.
 ```{bash}
